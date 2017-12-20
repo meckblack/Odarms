@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Odarms.Data.Objects.Entities.SystemManagement;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Odarms.Data.DataContext.DataContext
@@ -13,8 +14,11 @@ namespace Odarms.Data.DataContext.DataContext
 
         #region AppUserContext
 
-        #endregion 
+        #endregion
 
+        #region SystemManagement
+        public DbSet<Restaurant> Restuarnts { get; set; }
+        #endregion
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

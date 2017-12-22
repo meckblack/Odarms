@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities.Employee\Employee.cs" />
     <Compile Include="Entities.SystemManagement\Restaurant.cs" />
     <Compile Include="Entities.User\AppUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

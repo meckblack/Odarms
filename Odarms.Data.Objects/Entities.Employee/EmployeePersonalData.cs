@@ -75,16 +75,15 @@ namespace Odarms.Data.Objects.Entities.Employee
         [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
 
-        //[DisplayName("State")]
-        //public int StateId { get; set; }
+        [DisplayName("State")]
+        public int StateId { get; set; }
+        [ForeignKey("StateId")]
+        public virtual State State { get; set; }
 
-        //[ForeignKey("StateId")]
-        //public virtual State State { get; set; }
-        //[DisplayName("Lga")]
-        //public int LgaId { get; set; }
-
-        //[ForeignKey("LgaId")]
-        //public virtual Lga Lga { get; set; }
+        [DisplayName("LGA")]
+        public int LgaId { get; set; }
+        [ForeignKey("LgaId")]
+        public virtual Lga Lga { get; set; }
 
         #endregion
     }

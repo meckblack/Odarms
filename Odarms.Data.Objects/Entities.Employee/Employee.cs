@@ -12,9 +12,13 @@ namespace Odarms.Data.Objects.Entities.Employee
 {
     public class Employee
     {
+        #region Model Data
+
         public long EmployeeId { get; set; }
+        public List<EmployeeFamilyData> EmployeeFamilyDatas { get; set; }
+        public List<EmployeePersonalData> EmployeePersonalDatas { get; set; }
 
-
+        #endregion
 
         #region Foreign Keys
 

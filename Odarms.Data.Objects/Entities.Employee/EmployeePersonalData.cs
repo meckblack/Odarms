@@ -11,6 +11,8 @@ namespace Odarms.Data.Objects.Entities.Employee
 {
     public class EmployeePersonalData
     {
+        #region Model Data
+
         public long EmployeePersonalDataId { get; set; }
 
         [DisplayName("Employee Title"), Required(ErrorMessage = "Title is required")]
@@ -62,9 +64,16 @@ namespace Odarms.Data.Objects.Entities.Employee
         [DisplayName("Image")]
         public string EmployeeImage { get; set; }
 
+        public string DisplayName
+            => FirstName + " " + LastName;
 
+        #endregion
 
         #region Foreign Keys
+
+        public long EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public virtual Employee Employee { get; set; }
 
         //[DisplayName("State")]
         //public int StateId { get; set; }

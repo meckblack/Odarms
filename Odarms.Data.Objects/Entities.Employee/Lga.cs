@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Odarms.Data.Objects.Entities.Employee
 {
-    public class State
+    public class Lga
     {
         #region Model Data
 
         [Key]
-        public int StateId { get; set; }
-        [Required(ErrorMessage = "Name is required")]
+        public int LgaId { get; set; }
         public string Name { get; set; }
-
+        
         #endregion
-        
-        #region Enumerables
 
-        public IEnumerable<Lga> Lgas { get; set; }
-        
+        #region Foreign Keys
+
+        public int StateId { get; set; }
+        [ForeignKey("StateId")]
+        public virtual State State { get; set; }
+
         #endregion
     }
 }

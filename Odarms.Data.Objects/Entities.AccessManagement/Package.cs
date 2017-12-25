@@ -22,7 +22,7 @@ namespace Odarms.Data.Objects.Entities.AccessManagement
 
         #endregion
 
-        #region IEnumerable
+        #region IEnumerables
 
         public IEnumerable<Restaurant> Restaurants { get; set; }
 

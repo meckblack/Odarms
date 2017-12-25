@@ -44,7 +44,7 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
         public virtual Package Package { get; set; }
         #endregion
 
-        #region IEnumerable
+        #region IEnumerables
 
         public IEnumerable<Employee.Employee> Employees { get; set; }
         public IEnumerable<Employee.EmploymentPosition> EmploymentPositions { get; set; }

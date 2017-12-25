@@ -17,6 +17,7 @@ namespace Odarms.Data.Factory.AuthenticationManagement
         {
             _db = new Data.DataContext.DataContext.DataContext();
         }
+        #endregion      
 
         /// <summary>
         ///     This method is used to authenticate a users login

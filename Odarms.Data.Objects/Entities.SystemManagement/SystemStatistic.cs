@@ -12,7 +12,7 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
     {
         #region Model Data
 
-        public long ApplicationStatisticId { get; set; }
+        public long SystemStatisticId { get; set; }
 
         [Required]
         public string Action { get; set; }

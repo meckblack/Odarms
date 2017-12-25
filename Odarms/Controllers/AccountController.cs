@@ -83,7 +83,7 @@ namespace Odarms.Controllers
                 var userRole = _db.Roles.Find(appUser.RoleId);
                 if (appUser.RestaurantId != null)
                 {
-                    var 
+                    //
                 }
             }
 

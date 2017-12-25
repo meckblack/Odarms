@@ -19,7 +19,6 @@ namespace Odarms.Data.DataContext.DataContext
 
         public DbSet<AppUser> AppUsers { get; set; }
 
-
         #endregion
 
         #region Access Management
@@ -32,7 +31,8 @@ namespace Odarms.Data.DataContext.DataContext
 
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Department> Departments { get; set; }
-
+        public DbSet<SystemStatistic> SystemStatistics { get; set; }
+        public DbSet<RestaurantStructure> RestaurantStructures { get; set; }
 
         #endregion
 
@@ -47,11 +47,7 @@ namespace Odarms.Data.DataContext.DataContext
         public DbSet<Lga> Lgas { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<Role> Roles { get; set; }
-
-
-
-
-
+        
         #endregion
 
 

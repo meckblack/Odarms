@@ -1,6 +1,7 @@
 ﻿using Odarms.Data.Objects.Entities.AccessManagement;
 using Odarms.Data.Objects.Entities.Employee;
 using Odarms.Data.Objects.Entities.SystemManagement;
+using Odarms.Data.Objects.Entities.User;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -16,6 +17,7 @@ namespace Odarms.Data.DataContext.DataContext
 
         #region AppUserContext
 
+        public DbSet<AppUser> AppUsers { get; set; }
 
 
         #endregion

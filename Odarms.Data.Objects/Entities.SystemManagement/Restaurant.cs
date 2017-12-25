@@ -1,4 +1,5 @@
 ﻿using Odarms.Data.Objects.Entities.AccessManagement;
+using Odarms.Data.Objects.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,7 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
 
         public IEnumerable<Employee.Employee> Employees { get; set; }
         public IEnumerable<Employee.EmploymentPosition> EmploymentPositions { get; set; }
+        public IEnumerable<AppUser> AppUsers { get; set; }
 
 
         #endregion

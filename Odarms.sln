@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odarms.Data.DataContext", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odarms.Data.Service", "Odarms.Data.Service\Odarms.Data.Service.csproj", "{2EE3CD75-21E2-4FD8-A803-630BFC0F9D7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odarms.Data.Factory", "Odarms.Data.Factory\Odarms.Data.Factory.csproj", "{30B10AEC-C39D-4971-8202-31949462A4BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2EE3CD75-21E2-4FD8-A803-630BFC0F9D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE3CD75-21E2-4FD8-A803-630BFC0F9D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE3CD75-21E2-4FD8-A803-630BFC0F9D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B10AEC-C39D-4971-8202-31949462A4BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B10AEC-C39D-4971-8202-31949462A4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B10AEC-C39D-4971-8202-31949462A4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B10AEC-C39D-4971-8202-31949462A4BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

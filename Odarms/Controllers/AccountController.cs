@@ -9,12 +9,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Odarms.Models;
+using Odarms.Data.DataContext.DataContext;
 
 namespace Odarms.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private readonly DataContext _db = new DataContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -72,6 +74,8 @@ namespace Odarms.Controllers
             {
                 return View(model);
             }
+
+            var appUser = new AuthenticationFactory()
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

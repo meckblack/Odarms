@@ -12,7 +12,7 @@ namespace Odarms.Data.Objects.Entities.Employee
         #region Model Data
 
         [Key]
-        public int StateId { get; set; }
+        public long StateId { get; set; }
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 

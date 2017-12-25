@@ -17,19 +17,17 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
 
         [Required(ErrorMessage="Name field is requried")]
         public string Name { get; set; }
-
-        [DisplayName("Restaraunt Name")]
-        public long RestaurantId { get; set; }
-
+        
         #endregion
 
         #region Foreign Keys
 
+        [DisplayName("Restaraunt Name")]
+        public long RestaurantId { get; set; }
         [ForeignKey("RestaurantId")]
         public virtual Restaurant Restaurant { get; set; }
 
         public long? EmployeeId { get; set; }
-
         [ForeignKey("EmployeeId")]
         public virtual Employee.Employee Employee { get; set; }
 

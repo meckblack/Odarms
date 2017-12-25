@@ -76,12 +76,12 @@ namespace Odarms.Data.Objects.Entities.Employee
         public virtual Employee Employee { get; set; }
 
         [DisplayName("State")]
-        public int StateId { get; set; }
+        public long StateId { get; set; }
         [ForeignKey("StateId")]
         public virtual State State { get; set; }
 
         [DisplayName("LGA")]
-        public int LgaId { get; set; }
+        public long LgaId { get; set; }
         [ForeignKey("LgaId")]
         public virtual Lga Lga { get; set; }
 

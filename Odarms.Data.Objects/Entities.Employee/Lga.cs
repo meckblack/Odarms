@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Odarms.Data.Objects.Entities.Employee
 {
@@ -13,14 +8,14 @@ namespace Odarms.Data.Objects.Entities.Employee
         #region Model Data
 
         [Key]
-        public int LgaId { get; set; }
+        public long LgaId { get; set; }
         public string Name { get; set; }
-        
+
         #endregion
 
         #region Foreign Keys
 
-        public int StateId { get; set; }
+        public long StateId { get; set; }
         [ForeignKey("StateId")]
         public virtual State State { get; set; }
 

@@ -9,17 +9,17 @@ namespace Odarms.Data.Factory.AuthenticationManagement
 {
     public class RestaurantFactory
     {
-        private readonly DataContext _db = new DataContext();
+        //private readonly DataContext _db = new DataContext();
 
-        /// <summary>
-        /// This method retrieves the list of all institutions
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Restaurant> GetListOfInstitutions()
-        {
-            var allRestaurants = _db.Restaurants.ToList();
-            var restaurants = allRestaurants;
-            return restaurants;
-        }
+        ///// <summary>
+        ///// This method retrieves the list of all institutions
+        ///// </summary>
+        ///// <returns></returns>
+        //public IEnumerable<Restaurant> GetListOfInstitutions()
+        //{
+        //    var allRestaurants = _db.Restaurants.ToList();
+        //    var restaurants = allRestaurants;
+        //    return restaurants;
+        //}
     }
 }

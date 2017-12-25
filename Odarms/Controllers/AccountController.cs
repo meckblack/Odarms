@@ -75,7 +75,7 @@ namespace Odarms.Controllers
                 return View(model);
             }
 
-            var appUser = new AuthenticationFactory()
+            //var appUser = new AuthenticationFactory()
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

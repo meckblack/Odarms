@@ -1,12 +1,8 @@
-﻿using Odarms.Data.Objects.Entities.SystemManagement;
-using System;
-using System.Collections.Generic;
+﻿using Odarms.Data.Objects.Entities.Employee;
+using Odarms.Data.Objects.Entities.SystemManagement;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Odarms.Data.Objects.Entities.User
 {
@@ -42,9 +38,13 @@ namespace Odarms.Data.Objects.Entities.User
 
         #region Foreign Keys
 
-        public long RestaurantId { get; set; }
+        public long? RestaurantId { get; set; }
         [ForeignKey("RestaurantId")]
         public virtual Restaurant Restaurant { get; set; }
+
+        public long? RoleId { get; set; }
+        [ForeignKey("RoleId")]
+        public virtual Role Role { get; set; }
 
         #endregion
 

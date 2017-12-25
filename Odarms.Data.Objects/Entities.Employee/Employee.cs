@@ -35,6 +35,11 @@ namespace Odarms.Data.Objects.Entities.Employee
         [ForeignKey("DepartmentId"), Required]
         public virtual Department Department { get; set; }
 
+        [DisplayName("Assigned Role")]
+        public long? RoleId { get; set; }
+        [ForeignKey("RoleId"), Required]
+        public virtual Role Role { get; set; }
+
         #endregion
 
         #region IEnumerables

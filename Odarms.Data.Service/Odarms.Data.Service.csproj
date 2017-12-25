@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\BloodGroup.cs" />
+    <Compile Include="Enums\Genotype.cs" />
     <Compile Include="Enums\PackageType.cs" />
     <Compile Include="Enums\SubscriptionDuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

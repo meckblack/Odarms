@@ -1,4 +1,5 @@
 ﻿using Odarms.Data.Objects.Entities.SystemManagement;
+using Odarms.Data.Objects.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,11 +41,15 @@ namespace Odarms.Data.Objects.Entities.Employee
         [ForeignKey("RoleId"), Required]
         public virtual Role Role { get; set; }
 
+        
+
         #endregion
 
         #region IEnumerables
 
         public IEnumerable<Department> Departments { get; set; }
+        public IEnumerable<AppUser> AppUsers { get; set; }
+
 
         #endregion
     }

@@ -4447,11 +4447,6 @@
     <Content Include="Views\Packages\Details.cshtml" />
     <Content Include="Views\Packages\Edit.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
-    <Content Include="Views\AppUsers\Create.cshtml" />
-    <Content Include="Views\AppUsers\Delete.cshtml" />
-    <Content Include="Views\AppUsers\Details.cshtml" />
-    <Content Include="Views\AppUsers\Edit.cshtml" />
-    <Content Include="Views\AppUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -46,6 +46,7 @@ namespace Odarms.Data.DataContext.DataContext
         public DbSet<EmploymentPosition> EmploymentPositions { get; set; }
         public DbSet<Lga> Lgas { get; set; }
         public DbSet<State> States { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
 
 

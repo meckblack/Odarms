@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Odarms.Data.Objects.Entities.SystemManagement
 {
@@ -13,6 +9,7 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
     {
         #region Tables
 
+        [Key, ForeignKey("Employee")]
         public long DepartmentId { get; set; }
 
         [Required(ErrorMessage="Name field is requried")]
@@ -29,6 +26,7 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
 
         public long? EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]
+        [Microsoft.Build.Framework.Required]
         public virtual Employee.Employee Employee { get; set; }
 
         #endregion

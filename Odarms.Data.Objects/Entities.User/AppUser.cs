@@ -42,9 +42,15 @@ namespace Odarms.Data.Objects.Entities.User
         [ForeignKey("RestaurantId")]
         public virtual Restaurant Restaurant { get; set; }
 
+        public long? EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public virtual Employee.Employee Employee { get; set; }
+
         public long? RoleId { get; set; }
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
+
+        
 
         #endregion
 

@@ -11,6 +11,9 @@ using Microsoft.Owin.Security;
 using Odarms.Models;
 using Odarms.Data.DataContext.DataContext;
 using Odarms.Data.Factory.AuthenticationManagement;
+using System.Web.Security;
+using Odarms.Data.Objects.Entities.SystemManagement;
+using Odarms.Data.Service.Enums;
 
 namespace Odarms.Controllers
 {
@@ -69,7 +72,7 @@ namespace Odarms.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -83,26 +86,66 @@ namespace Odarms.Controllers
                 var userRole = _db.Roles.Find(appUser.RoleId);
                 if (appUser.RestaurantId != null)
                 {
-                    //
+                    var restaurantStructure = _db.RestaurantStructures.SingleOrDefault(n => n.RestaurantId == restaurant.RestaurantId);
+                    Session["restaurantStructure"] = restaurantStructure;
                 }
+
+                //store objects in a session
+                Session["odarmsloggedinuser"] = appUser;
+                Session["restaurant"] = restaurant;
+                Session["role"] = userRole;
+
+                //create the authentication ticket
+                var authTicket = new FormsAuthenticationTicket(
+                    1,
+                    appUser.AppUserId.ToString(), //user id
+                    DateTime.Now,
+                    DateTime.Now.AddMinutes(40), //expiry
+                    true, //true to remember
+                    userRole.Name, //roles
+                    Url.Action("Dashboard", "Home")
+                    );
+
+                //encrypt the ticket and add it to a cookie
+                HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(authTicket));
+                Response.Cookies.Add(cookie);
+                var statistics = new SystemStatistic();
+                if (restaurant != null)
+                {
+                    statistics.RestaurantId = restaurant.RestaurantId;
+                    statistics.Action = StatisticsEnum.Login.ToString();
+                    statistics.DateOccured = DateTime.Now;
+                    statistics.LoggedInUserId = appUser.AppUserId;
+
+                    _db.SystemStatistics.Add(statistics);
+                    _db.SaveChanges();
+                    if((restaurant.SetUpStatus == SetUpStatus.Incomplete.ToString() && userRole.Name == "Restaurant Administrator"))
+                    {
+                        return RedirectToAction("Create", "RestaurantStructures");
+                    }
+                }
+                return RedirectToAction("Dashboard", "Home");
             }
+            TempData["login"] = "Incorrect Username/Password";
+            TempData["notificationType"] = NotificationType.Error.ToString();
+            return View(model);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
-            }
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            //switch (result)
+            //{
+            //    case SignInStatus.Success:
+            //        return RedirectToLocal(returnUrl);
+            //    case SignInStatus.LockedOut:
+            //        return View("Lockout");
+            //    case SignInStatus.RequiresVerification:
+            //        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+            //    case SignInStatus.Failure:
+            //    default:
+            //        ModelState.AddModelError("", "Invalid login attempt.");
+            //        return View(model);
+            //}
         }
 
         //
@@ -405,8 +448,12 @@ namespace Odarms.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            Session["odarmasloggedinuser"] = null;
+            Session["restaurant"] = null;
+            Session["role"] = null;
+
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
         }
 
         //

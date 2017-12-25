@@ -44,6 +44,13 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
         [Required(ErrorMessage = "Contact Number field is required")]
         public string ContactNumber { get; set; }
 
+        public string SetUpStatus { get; set; }
+
+        public string AccessCode { get; set; }
+
+        [DisplayName("Registration Number")]
+        public string RegistrationNumber { get; set; }
+
         #endregion
 
         #region Foreign Keys

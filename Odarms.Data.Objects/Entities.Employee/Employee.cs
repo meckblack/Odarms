@@ -39,7 +39,7 @@ namespace Odarms.Data.Objects.Entities.Employee
 
         #region IEnumerables
 
-        public int MyProperty { get; set; }
+        public IEnumerable<Department> Departments { get; set; }
 
         #endregion
     }

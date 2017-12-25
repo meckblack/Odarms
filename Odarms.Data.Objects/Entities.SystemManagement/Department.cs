@@ -35,8 +35,12 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
 
         #endregion
 
+        #region IEnumerables
 
         public IEnumerable<Employee.Employee> Employees { get; set; }
+
+        #endregion
+
 
     }
 }

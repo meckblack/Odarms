@@ -40,7 +40,7 @@ namespace Odarms.Data.Objects.Entities.Employee
 
         #region IEnumerables
 
-        public IEnumerable<EmployeeWorkData> MyProperty { get; set; }
+        public IEnumerable<EmployeeWorkData> EmployeeWorkDatas { get; set; }
 
         #endregion
 

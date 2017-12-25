@@ -4470,6 +4470,20 @@
   <ItemGroup>
     <TypeScriptCompile Include="Content\vendors\moment\moment.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Odarms.Data.DataContext\Odarms.Data.DataContext.csproj">
+      <Project>{61320ccd-d510-4788-9a10-b94b3f6f0112}</Project>
+      <Name>Odarms.Data.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Odarms.Data.Objects\Odarms.Data.Objects.csproj">
+      <Project>{2897710c-9723-4384-9138-9629a937f04f}</Project>
+      <Name>Odarms.Data.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Odarms.Data.Service\Odarms.Data.Service.csproj">
+      <Project>{2ee3cd75-21e2-4fd8-a803-630bfc0f9d7f}</Project>
+      <Name>Odarms.Data.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

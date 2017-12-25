@@ -24,7 +24,7 @@ namespace Odarms.Data.Factory.AuthenticationManagement
         /// This method retrieves the list of all institutions
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Restaurant> GetListOfInstitutions()
+        public IEnumerable<Restaurant> GetListOfRestaurants()
         {
             var allRestaurants = _db.Restaurants.ToList();
             var restaurants = allRestaurants;

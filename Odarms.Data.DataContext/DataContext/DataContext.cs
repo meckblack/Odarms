@@ -30,7 +30,7 @@ namespace Odarms.Data.DataContext.DataContext
 
         #region System Management
 
-        public DbSet<Restaurant> Restuarnts { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Department> Departments { get; set; }
 
 

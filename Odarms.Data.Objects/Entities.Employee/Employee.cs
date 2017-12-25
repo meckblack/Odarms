@@ -17,6 +17,9 @@ namespace Odarms.Data.Objects.Entities.Employee
         public long EmployeeId { get; set; }
         public List<EmployeeFamilyData> EmployeeFamilyDatas { get; set; }
         public List<EmployeePersonalData> EmployeePersonalDatas { get; set; }
+        public List<EmployeeMedicalData> EmployeeMedicalDatas { get; set; }
+        public List<EmployeeWorkData> EmployeeWorkDatas { get; set; }
+
 
         #endregion
 
@@ -32,7 +35,11 @@ namespace Odarms.Data.Objects.Entities.Employee
         [ForeignKey("DepartmentId"), Required]
         public virtual Department Department { get; set; }
 
+        #endregion
 
+        #region IEnumerables
+
+        public int MyProperty { get; set; }
 
         #endregion
     }

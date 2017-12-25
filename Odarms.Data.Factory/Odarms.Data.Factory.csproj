@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationManagement\AuthenticationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemManagament\AppUserFactory.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Odarms.Data.DataContext\Odarms.Data.DataContext.csproj">
+      <Project>{61320ccd-d510-4788-9a10-b94b3f6f0112}</Project>
+      <Name>Odarms.Data.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Odarms.Data.Objects\Odarms.Data.Objects.csproj">
+      <Project>{2897710c-9723-4384-9138-9629a937f04f}</Project>
+      <Name>Odarms.Data.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Odarms.Data.Service\Odarms.Data.Service.csproj">
+      <Project>{2ee3cd75-21e2-4fd8-a803-630bfc0f9d7f}</Project>
+      <Name>Odarms.Data.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4482,6 +4482,10 @@
       <Project>{61320ccd-d510-4788-9a10-b94b3f6f0112}</Project>
       <Name>Odarms.Data.DataContext</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Odarms.Data.Factory\Odarms.Data.Factory.csproj">
+      <Project>{30b10aec-c39d-4971-8202-31949462a4ba}</Project>
+      <Name>Odarms.Data.Factory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Odarms.Data.Objects\Odarms.Data.Objects.csproj">
       <Project>{2897710c-9723-4384-9138-9629a937f04f}</Project>
       <Name>Odarms.Data.Objects</Name>

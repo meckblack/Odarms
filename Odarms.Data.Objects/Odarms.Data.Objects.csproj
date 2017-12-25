@@ -61,6 +61,7 @@
     <Compile Include="Entities.SystemManagement\Checker.cs" />
     <Compile Include="Entities.SystemManagement\Department.cs" />
     <Compile Include="Entities.SystemManagement\Restaurant.cs" />
+    <Compile Include="Entities.SystemManagement\RestaurantStructure.cs" />
     <Compile Include="Entities.User\AppUser.cs" />
     <Compile Include="Entities.Vendor\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

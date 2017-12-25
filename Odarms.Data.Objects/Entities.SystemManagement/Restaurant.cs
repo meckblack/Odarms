@@ -58,6 +58,8 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
         public IEnumerable<Employee.Employee> Employees { get; set; }
         public IEnumerable<Employee.EmploymentPosition> EmploymentPositions { get; set; }
         public IEnumerable<AppUser> AppUsers { get; set; }
+        public IEnumerable<RestaurantStructure> RestaurantStructures { get; set; }
+
 
 
         #endregion

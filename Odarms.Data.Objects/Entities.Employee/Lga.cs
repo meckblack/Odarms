@@ -15,7 +15,7 @@ namespace Odarms.Data.Objects.Entities.Employee
 
         #region Foreign Keys
 
-        public long StateId { get; set; }
+        public long? StateId { get; set; }
         [ForeignKey("StateId")]
         public virtual State State { get; set; }
 

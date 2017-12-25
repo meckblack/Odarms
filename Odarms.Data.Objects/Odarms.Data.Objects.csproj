@@ -56,6 +56,7 @@
     <Compile Include="Entities.Employee\EmploymentPosition.cs" />
     <Compile Include="Entities.Employee\Lga.cs" />
     <Compile Include="Entities.Employee\State.cs" />
+    <Compile Include="Entities.SystemManagement\Checker.cs" />
     <Compile Include="Entities.SystemManagement\Department.cs" />
     <Compile Include="Entities.SystemManagement\Restaurant.cs" />
     <Compile Include="Entities.User\AppUser.cs" />

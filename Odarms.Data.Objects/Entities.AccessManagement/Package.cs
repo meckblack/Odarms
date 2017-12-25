@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Odarms.Data.Objects.Entities.AccessManagement
 {
-    public class Package
+    public class Package : Checker
     {
         #region Model Data
 

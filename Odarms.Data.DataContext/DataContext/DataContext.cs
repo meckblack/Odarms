@@ -1,4 +1,5 @@
-﻿using Odarms.Data.Objects.Entities.Employee;
+﻿using Odarms.Data.Objects.Entities.AccessManagement;
+using Odarms.Data.Objects.Entities.Employee;
 using Odarms.Data.Objects.Entities.SystemManagement;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -19,7 +20,13 @@ namespace Odarms.Data.DataContext.DataContext
 
         #endregion
 
-        #region SystemManagement
+        #region Access Management
+
+        public DbSet<Package> Packages { get; set; }
+
+        #endregion
+
+        #region System Management
 
         public DbSet<Restaurant> Restuarnts { get; set; }
         public DbSet<Department> Departments { get; set; }

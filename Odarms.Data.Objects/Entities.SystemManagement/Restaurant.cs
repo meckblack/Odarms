@@ -1,11 +1,15 @@
-﻿using System.ComponentModel;
+﻿using Odarms.Data.Objects.Entities.AccessManagement;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Odarms.Data.Objects.Entities.SystemManagement
 {
     public class Restaurant
     {
-        [Required]
+        #region Model Data
+
         public long RestaurantId { get; set; }
 
         [Required(ErrorMessage = "Name field is required")]
@@ -30,5 +34,25 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
 
         [Required(ErrorMessage = "Contact Number field is required")]
         public string ContactNumber { get; set; }
+
+        #endregion
+
+        #region Foreign Keys
+
+        public long? PackageId { get; set; }
+        [ForeignKey("PackageId")]
+        public virtual Package Package { get; set; }
+        #endregion
+
+        #region IEnumerable
+
+        public IEnumerable<Employee.Employee> Employees { get; set; }
+        public IEnumerable<Employee.EmploymentPosition> EmploymentPositions { get; set; }
+
+
+        #endregion
+
+
+
     }
 }

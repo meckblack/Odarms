@@ -1,4 +1,5 @@
 ﻿using Odarms.Data.Objects.Entities.AccessManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +20,13 @@ namespace Odarms.Data.Objects.Entities.SystemManagement
         public string Motto { get; set; }
 
         public string Logo { get; set; }
+
+        public DateTime SubscriprionStartDate { get; set; }
+
+        public DateTime SubscriptonEndDate { get; set; }
+
+        [DisplayName("Subscription Duration")]
+        public string SubscriptionDuration { get; set; }
 
         [Required(ErrorMessage = "State field is required")]
         public string State { get; set; }

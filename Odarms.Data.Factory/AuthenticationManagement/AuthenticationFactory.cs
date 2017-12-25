@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Odarms.Data.Factory.SystemManagament;
+using Odarms.Data.Objects.Entities.User;
+using Odarms.Data.Service.Encryption;
+using System.Web.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +22,7 @@ namespace Odarms.Data.Factory.AuthenticationManagement
         /// <returns></returns>
         public AppUser AuthenticateAppUserLogin(string email, string password)
         {
-            var hashPassword = new Md5Ecryption().ConvertStringToMd5Hash(password.Trim());
+            var hashPassword = new Md5Encryption().ConvertStringToMd5Hash(password.Trim());
             var user = new AppUserFactory().GetAppUserByLogin(email, hashPassword);
             return user;
         }
@@ -49,7 +53,7 @@ namespace Odarms.Data.Factory.AuthenticationManagement
         {
             var user = _db.AppUsers.Find(userId);
             user.Password = newPassword;
-            var hashPasword = new Md5Ecryption().ConvertStringToMd5Hash(newPassword);
+            var hashPasword = new Md5Encryption().ConvertStringToMd5Hash(newPassword);
             _db.Entry(user).State = EntityState.Modified;
             user.Password = hashPasword;
             _db.SaveChanges();
@@ -62,7 +66,7 @@ namespace Odarms.Data.Factory.AuthenticationManagement
         /// <returns>The hashed password</returns>
         public string GetPasswordHash(string clearPassword)
         {
-            return new Md5Ecryption().ConvertStringToMd5Hash(clearPassword);
+            return new Md5Encryption().ConvertStringToMd5Hash(clearPassword);
         }
 
         /// <summary>

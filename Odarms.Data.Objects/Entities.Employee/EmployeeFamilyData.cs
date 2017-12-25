@@ -29,6 +29,7 @@ namespace Odarms.Data.Objects.Entities.Employee
         public string Email { get; set; }
 
         [DisplayName("Date Of Birth"), Required(ErrorMessage = "Date Of Birth is required")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy HH:mm}")]
         public DateTime DOB { get; set; }
 
         [DisplayName("Relationship"), Required(ErrorMessage = "Date Of Birth is required")]

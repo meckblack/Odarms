@@ -4535,9 +4535,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\Layout Partial\LayoutHeader.cshtml" />
-    <Content Include="Views\Shared\Layout Partial\LayoutSidebar.cshtml" />
-    <Content Include="Views\Shared\Layout Partial\LayoutContolSidebar.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LayoutHeader.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LayoutSidebar.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LayoutContolSidebar.cshtml" />
     <Content Include="Views\Shared\Layout Partial\testhome.cshtml" />
     <Content Include="Views\Packages\Create.cshtml" />
     <Content Include="Views\Packages\Delete.cshtml" />
@@ -4545,9 +4545,10 @@
     <Content Include="Views\Packages\Edit.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Shared\_LandingLayout.cshtml" />
-    <Content Include="Views\Shared\Layout Partial\LandingLayoutTopNavigation.cshtml" />
-    <Content Include="Views\Shared\Layout Partial\LandingLayoutMainNavigation.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LandingLayoutTopNavigation.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LandingLayoutMainNavigation.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\_LandingLayoutFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

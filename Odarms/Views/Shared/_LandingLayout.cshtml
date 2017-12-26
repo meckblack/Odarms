@@ -18,12 +18,20 @@
         <header class="header trans_300">
 
             <!-- Top Navigation Begin -->
+            @Html.Partial("~/Views/Shared/Layout Partial/_LandingLayoutTopNavigation.cshtml")
             <!-- Top Navigation End-->
 
             <!-- Main Navigation Begin -->
+            @Html.Partial("~/Views/Shared/Layout Partial/_LandingLayoutMainNavigation.cshtml")
             <!-- Main Navigation End -->
             
-            <div class="fs_menu_overlay"></div>
+            <!-- Render Body Begin -->
+            @RenderBody()
+            <!-- Render Body End -->
+
+            <!-- Footer Begin -->
+            @Html.Partial("~/Views/Shared/Layout Partial/_LandingLayoutFooter.cshtml")
+            <!-- Footer End -->
 
         </header>
     </div>

@@ -4546,6 +4546,7 @@
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Shared\_LandingLayout.cshtml" />
     <Content Include="Views\Shared\Layout Partial\LandingLayoutTopNavigation.cshtml" />
+    <Content Include="Views\Shared\Layout Partial\LandingLayoutMainNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

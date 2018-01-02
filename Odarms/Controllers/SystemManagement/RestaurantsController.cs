@@ -195,6 +195,7 @@ namespace Odarms.Controllers.SystemManagement
         // GET: /Vendor/Requests
         public ActionResult Register()
         {
+            ViewBag.PackageId = new SelectList(_db.Packages, "PackageId", "Name");
             return View();
         }
 
@@ -235,6 +236,7 @@ namespace Odarms.Controllers.SystemManagement
                     RedirectToAction("Login", "Restaurant");
                 }
             }
+            ViewBag.PackageId = new SelectList(_db.Packages, "PackageId", "Name", restaurant.PackageId);
             return View();
         }
 
@@ -255,14 +257,6 @@ namespace Odarms.Controllers.SystemManagement
         #endregion
 
 
-
-
-
-
-
-
-
-
-
+        
     }
 }

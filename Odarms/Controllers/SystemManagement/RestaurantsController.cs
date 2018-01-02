@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Odarms.Data.DataContext.DataContext;
 using Odarms.Data.Objects.Entities.SystemManagement;
 using Odarms.Data.Factory.AuthenticationManagement;
+using System.Threading.Tasks;
 
 namespace Odarms.Controllers.SystemManagement
 {
@@ -186,6 +187,57 @@ namespace Odarms.Controllers.SystemManagement
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        #endregion
+
+        #region Register Restaurant
+
+        // GET: /Vendor/Requests
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: /Restaurant/Register
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Register([Bind(Include ="Name,Motto,")] Restaurant restaurant)
+        {
+            if(ModelState.IsValid)
+            {
+                if (await _db.Restaurants.AnyAsync(record => record.Name == restaurant.Name))
+                {
+                    ModelState.AddModelError("", "Company name is taken!!!");
+                }
+                if (await _db.Restaurants.AnyAsync(r => r.ContactEmail == restaurant.ContactEmail))
+                {
+                    ModelState.AddModelError("", "Contact mail is taken!!!");
+                }
+                else
+                {
+                    var reg = new Restaurant
+                    {
+                        RestaurantId = restaurant.RestaurantId,
+                        Name = restaurant.Name,
+                        ContactEmail = restaurant.ContactEmail,
+                        ContactNumber = restaurant.ContactNumber,
+                        Logo = restaurant.Logo,
+                        State = restaurant.State,
+                        LGA = restaurant.LGA,
+                        Location = restaurant.Location,
+                        SubscriptionDuration = restaurant.SubscriptionDuration
+                    };
+
+                    _db.Restaurants.Add(reg);
+                    _db.SaveChanges();
+                    RedirectToAction("Login", "Restaurant");
+                }
+            }
+            return View();
+        }
+
 
         #endregion
 

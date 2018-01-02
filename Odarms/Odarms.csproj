@@ -4550,10 +4550,10 @@
     <Content Include="Views\Shared\Layout Partial\_LandingLayoutMainNavigation.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Shared\Layout Partial\_LandingLayoutFooter.cshtml" />
+    <Content Include="Views\Restaurants\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Restaurants\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -218,20 +218,10 @@ namespace Odarms.Controllers.SystemManagement
                 }
                 else
                 {
-                    var reg = new Restaurant
-                    {
-                        RestaurantId = restaurant.RestaurantId,
-                        Name = restaurant.Name,
-                        ContactEmail = restaurant.ContactEmail,
-                        ContactNumber = restaurant.ContactNumber,
-                        Logo = restaurant.Logo,
-                        State = restaurant.State,
-                        LGA = restaurant.LGA,
-                        Location = restaurant.Location,
-                        SubscriptionDuration = restaurant.SubscriptionDuration
-                    };
-
-                    _db.Restaurants.Add(reg);
+                    restaurant.SubscriprionStartDate = DateTime.Now;
+                    restaurant.SubscriptonEndDate = restaurant.SubscriprionStartDate.AddYears(1);
+                    
+                    _db.Restaurants.Add(restaurant);
                     _db.SaveChanges();
                     RedirectToAction("Login", "Restaurant");
                 }

@@ -11,6 +11,10 @@ using Odarms.Data.Objects.Entities.SystemManagement;
 using Odarms.Data.Factory.AuthenticationManagement;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.Owin;
+using AIMS.Services.RandomStringGenerator;
+using Odarms.Models;
+using System.Net.Mail;
+using Odarms.Data.Service.Enums;
 
 namespace Odarms.Controllers.SystemManagement
 {
@@ -234,7 +238,7 @@ namespace Odarms.Controllers.SystemManagement
         public ActionResult Register()
         {
             ViewBag.PackageId = new SelectList(_db.Packages, "PackageId", "Name");
-
+            ViewBag.hash = new RandomStringGenerator().GenerateString();
             return View();
         }
 
@@ -260,11 +264,43 @@ namespace Odarms.Controllers.SystemManagement
                     restaurant.SubscriprionStartDate = DateTime.Now;
                     restaurant.SubscriptonEndDate = restaurant.SubscriprionStartDate.AddYears(1);
                     
+
                     _db.Restaurants.Add(restaurant);
                     _db.SaveChanges();
-                    RedirectToAction("Login", "Restaurant");
+
+                    var message = new MailMessage();
+                    message.Priority = MailPriority.High;
+                    message.From = new MailAddress("Odarms", "meckblvck");
+                    message.Subject = "Access Code";
+
+                    message.To.Add(new MailAddress(restaurant.ContactEmail));
+
+                    var url = Url.Action("", "", new { }, protocol: Request.Url.Scheme);
+
+                    var emailBody =
+                        "<div>" +
+                        "<h3 style='font-size: 30px; text-align:center;'><strong>OPTIMIZED DELIVERY AND RESTAURANT MANAGEMENT SYSTEM</strong></h3>" +
+                        "<div style='position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; padding-top: 5px;'>" +
+                            "<h4 style='font-size: 18px; text-align:justify;'>You have been added to ODARMS Community. </h4>" +
+                            "<p style='font-size: 18px; text-align:justify;'> " + restaurant.Name + " this " + restaurant.AccessCode + "is your Access Code" +
+                            ". You can access the Restaurant Management System <a href=\"" + url + "\">here</a></p>" +
+                        "<footer style='font-size: 18px; text-align:center;'>" +
+                            "<p>&copy;" + DateTime.Now.Year + " meckblvck.</p></footer></div>";
+
+                    message.Body = string.Format(emailBody);
+                    message.IsBodyHtml = true;
+
+                    using (var smtp = new SmtpClient())
+                    {
+                        await smtp.SendMailAsync(message);
+                    }
+
+                    TempData["Success"] = restaurant.Name + " have successfully joined the odarms community";
+                    return Json(new { success = true });
                 }
             }
+
+            // If we got this far, something failed, redisplay form
             ViewBag.PackageId = new SelectList(_db.Packages, "PackageId", "Name", restaurant.PackageId);
             return View();
         }

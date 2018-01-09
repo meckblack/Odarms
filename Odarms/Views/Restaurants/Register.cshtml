@@ -14,6 +14,8 @@
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        string hash = Convert.ToString(ViewBag.hash);
+        @Html.Hidden("AccessCode", hash)
 
         <div class=" container contact_container">
             <div class="row">

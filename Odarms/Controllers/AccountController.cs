@@ -58,6 +58,12 @@ namespace Odarms.Controllers
             }
         }
 
+        #region Register Restaurant
+
+
+
+        #endregion
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

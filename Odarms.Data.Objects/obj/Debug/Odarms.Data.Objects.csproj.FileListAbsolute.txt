@@ -1,0 +1,11 @@
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\Odarms.Data.Objects.dll.config
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\Odarms.Data.Objects.dll
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\Odarms.Data.Objects.pdb
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\EntityFramework.dll
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\EntityFramework.xml
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.dll
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.pdb
+c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.csprojResolveAssemblyReference.cache
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\Microsoft.Build.Framework.dll

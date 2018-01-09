@@ -1,0 +1,9 @@
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Odarms.Data.Service.dll
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Odarms.Data.Service.pdb
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Odarms.Data.Objects.dll
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Odarms.Data.Objects.pdb
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Odarms.Data.Objects.dll.config
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.csprojResolveAssemblyReference.cache
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.dll
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.pdb
+C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Microsoft.Build.Framework.dll

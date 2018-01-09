@@ -10,12 +10,50 @@ using Odarms.Data.DataContext.DataContext;
 using Odarms.Data.Objects.Entities.SystemManagement;
 using Odarms.Data.Factory.AuthenticationManagement;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Odarms.Controllers.SystemManagement
 {
+    [Authorize]
     public class RestaurantsController : Controller
     {
-        private DataContext _db;
+        private readonly DataContext _db = new DataContext();
+
+
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+        
+
+        public RestaurantsController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
 
         #region Constructor
 
@@ -196,6 +234,7 @@ namespace Odarms.Controllers.SystemManagement
         public ActionResult Register()
         {
             ViewBag.PackageId = new SelectList(_db.Packages, "PackageId", "Name");
+
             return View();
         }
 

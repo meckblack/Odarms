@@ -57,7 +57,8 @@ namespace Odarms.Controllers.AccessManagement
         // GET: Packages/Create
         public ActionResult Create()
         {
-            return View();
+            var package = new Package();
+            return PartialView("Create", package);
         }
 
         // POST: Packages/Create
@@ -95,7 +96,7 @@ namespace Odarms.Controllers.AccessManagement
                 _db.SaveChanges();
                 TempData["message"] = "You have successfully added a new package!";
                 TempData["notificationType"] = NotificationType.Success.ToString();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
 
             return View(package);

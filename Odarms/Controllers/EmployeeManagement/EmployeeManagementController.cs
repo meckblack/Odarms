@@ -50,14 +50,31 @@ namespace Odarms.Controllers.EmployeeManagement
             var emailCheck = _db.EmployeePersonalDatas.Where(n => n.Email == email);
             return Json(emailCheck, JsonRequestBehavior.AllowGet);
         }
-
-
+        
         // GET: EmployeeManagement/ListOfEmployeesByStatus
         public ActionResult ListOfEmployeesByStatus(string status, long? id)
         {
             var employees = new EmployeeFactory().GetAllEmployeesByStatus(status, id);
             return View(employees.ToList());
         }
+
+        // GET: EmployeeManagement/ListOfEmployeesInactive
+        public ActionResult ListOfEmployeesInactive(string status)
+        {
+            var employees = new EmployeeFactory().GetAllInactiveEmployees(status);
+            return View("ListOfEmployeesByStatus", employees);
+        }
+
+        // GET: EmployeeManagement/ListOfEmployees
+        public ActionResult ListOfEmployees()
+        {
+            var institution = Session["institution"] as Restaurant;
+            return
+                View(
+                    _db.Employees.ToList()
+                        .Where(n => institution != null && n.RestaurantId == institution.RestaurantId));
+        }
+
 
 
         #endregion

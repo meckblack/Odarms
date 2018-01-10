@@ -19,7 +19,7 @@ namespace Odarms.Data.Objects.Entities.Employee
         public DateTime EmploymentDate { get; set; }
 
         [DisplayName("Employment Status"), Required(ErrorMessage = "Employment status is requried")]
-        public string EmployementStatus { get; set; }
+        public string EmploymentStatus { get; set; }
 
         #endregion
 

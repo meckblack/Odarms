@@ -41,6 +41,7 @@ namespace Odarms.Data.Objects.Entities.Employee
         #region IEnumerables
 
         public IEnumerable<EmployeeWorkData> EmployeeWorkDatas { get; set; }
+        public IEnumerable<PositionChange> PositionChanges { get; set; }
 
         #endregion
 

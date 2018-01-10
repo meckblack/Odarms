@@ -52,6 +52,12 @@ namespace Odarms.Controllers.EmployeeManagement
         }
 
 
+        // GET: EmployeeManagement/ListOfEmployeesByStatus
+        public ActionResult ListOfEmployeesByStatus(string status, long? id)
+        {
+            var employees = new EmployeeFactory().GetAllEmployeesByStatus(status, id);
+            return View(employees.ToList());
+        }
 
 
         #endregion

@@ -237,7 +237,7 @@ namespace Odarms.Controllers.SystemManagement
 
                     message.To.Add(new MailAddress(restaurant.ContactEmail));
 
-                    var url = Url.Action("", "", new { }, protocol: Request.Url.Scheme);
+                    var url = Url.Action("SelectRestaurant", "Home", new { }, protocol: Request.Url.Scheme);
 
                     var emailBody =
                         "<div>" +

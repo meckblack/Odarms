@@ -4552,6 +4552,7 @@
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Shared\Layout Partial\_LandingLayoutFooter.cshtml" />
     <Content Include="Views\Restaurants\Register.cshtml" />
+    <Content Include="Views\Home\SelectRestaurant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

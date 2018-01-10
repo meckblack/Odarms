@@ -6,6 +6,8 @@ namespace Odarms.Data.Objects.Entities.Employee
 {
     public class EmployeeBankData
     {
+        #region Model Data
+
         public long EmployeeBankDataId { get; set; }
         [Required]
         [DisplayName("Bank Name")]
@@ -28,11 +30,18 @@ namespace Odarms.Data.Objects.Entities.Employee
         [DisplayName("Account Type")]
         public string AccountType { get; set; }
         public long FakeId { get; set; }
+        
+        #endregion
+
+        #region Foreign Key
+
         public string DisplayName
       => AccountFirstName + " " + AccountLastName;
         public long EmployeeId { get; set; }
-
         [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
+
+        #endregion
+
     }
 }

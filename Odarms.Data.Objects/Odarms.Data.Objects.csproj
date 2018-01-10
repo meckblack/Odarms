@@ -58,6 +58,7 @@
     <Compile Include="Entities.Employee\EmployeeWorkData.cs" />
     <Compile Include="Entities.Employee\EmploymentPosition.cs" />
     <Compile Include="Entities.Employee\Lga.cs" />
+    <Compile Include="Entities.Employee\PositionChange.cs" />
     <Compile Include="Entities.Employee\Role.cs" />
     <Compile Include="Entities.Employee\State.cs" />
     <Compile Include="Entities.SystemManagement\Checker.cs" />

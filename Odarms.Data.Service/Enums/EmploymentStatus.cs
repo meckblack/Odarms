@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Odarms.Data.Service.Enums
 {
-    public class EmployementStatus
+    public class EmploymentStatus
     {
         Active,
         Retired,

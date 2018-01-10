@@ -1,10 +1,44 @@
-﻿@model Odarms.Data.Objects.Entities.SystemManagement.Restaurant
+﻿@using Odarms.Data.Service.Enums
+@model Odarms.Data.Objects.Entities.SystemManagement.Restaurant
 
 @{
     ViewBag.Title = "SelectRestaurant";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
+@if (TempData["access"] != null)
+{
+    if (TempData["notificationtype"].Equals(NotificationType.Success.ToString()))
+    {
+        <div class="alert-success alert-dismissable">@TempData["access"]</div>
+    }
+    else if (TempData["notificationtype"].Equals(NotificationType.Error.ToString()))
+    {
+        <div class="alert alert-danger alert-dismissable">@TempData["access"]</div>
+    }
+    else if (TempData["notificationtype"].Equals(NotificationType.Info.ToString()))
+    {
+        <div class="alert-info alert-dismissable">@TempData["access"]</div>
+    }
+}
+
+@using (Html.BeginForm("SelectRestaurant", "Home", new { ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <h1>Select Restaurant</h1>
+    <div>
+        @Html.DropDownListFor(m => m.RestaurantId, (SelectList)ViewBag.Restaurants, "------------- Please select your restaurant -------------", new { @class = "form-control select-dropdown" })
+        <h1></h1>
+
+        @Html.EditorFor(m => m.AccessCode, new { htmlAttributes = new { @class = "form-control", placeholder = "----------- Enter Restaurant access code ---------------" } })
+    </div>
+
+    <div>
+        <input type="submit" value="Next" class="btn btn-success btn-block" style="margin-left: 0px;" />
+    </div>
+}
 
 
 

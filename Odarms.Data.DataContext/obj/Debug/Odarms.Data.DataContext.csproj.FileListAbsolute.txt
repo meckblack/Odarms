@@ -26,3 +26,4 @@ C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataConte
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate11.resources
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate12.resources
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate13.resources
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate14.resources

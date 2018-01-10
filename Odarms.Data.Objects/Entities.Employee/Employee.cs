@@ -20,6 +20,7 @@ namespace Odarms.Data.Objects.Entities.Employee
         public List<EmployeePersonalData> EmployeePersonalDatas { get; set; }
         public List<EmployeeMedicalData> EmployeeMedicalDatas { get; set; }
         public List<EmployeeWorkData> EmployeeWorkDatas { get; set; }
+        public List<EmployeeBankData> EmployeeBankDatas { get; set; }
 
 
         #endregion

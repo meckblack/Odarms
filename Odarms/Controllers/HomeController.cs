@@ -39,7 +39,7 @@ namespace Odarms.Controllers.Landing
             else
             {
                 ViewBag.Restaurants = new SelectList(_db.Restaurants.Where(r => r.SubscriptonEndDate > DateTime.Now
-                                                   && r.SetUpStatus == SetUpStatus.Completed.ToString()), "RestaurantId", "Name");
+                                                   /*&& r.SetUpStatus == SetUpStatus.Completed.ToString()*/), "RestaurantId", "Name");
                 TempData["access"] = "Access code doesn't match institution!Try Again";
                 TempData["notificationType"] = NotificationType.Error.ToString();
                 return View(restaurant);

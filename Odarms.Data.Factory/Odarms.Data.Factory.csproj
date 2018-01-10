@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AuthenticationManagement\AuthenticationFactory.cs" />
     <Compile Include="AuthenticationManagement\RestaurantFactory.cs" />
+    <Compile Include="EmployeeManagement\StateFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManagament\AppUserFactory.cs" />
   </ItemGroup>

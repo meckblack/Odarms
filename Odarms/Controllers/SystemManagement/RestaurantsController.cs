@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Odarms.Data.DataContext.DataContext;
 using Odarms.Data.Objects.Entities.SystemManagement;
 using Odarms.Data.Factory.AuthenticationManagement;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.Owin;
-using AIMS.Services.RandomStringGenerator;
-using Odarms.Models;
-using System.Net.Mail;
 using Odarms.Data.Service.Enums;
+using System.Threading.Tasks;
+using AIMS.Services.RandomStringGenerator;
+using System.Net.Mail;
 
 namespace Odarms.Controllers.SystemManagement
 {
@@ -22,43 +18,7 @@ namespace Odarms.Controllers.SystemManagement
     public class RestaurantsController : Controller
     {
         private readonly DataContext _db = new DataContext();
-
-
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
         
-
-        public RestaurantsController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
-
-
         #region Constructor
 
         public RestaurantsController()
@@ -153,6 +113,8 @@ namespace Odarms.Controllers.SystemManagement
             {
                 restaurant.SubscriprionStartDate = DateTime.Now;
                 restaurant.SubscriptonEndDate = restaurant.SubscriprionStartDate.AddYears(1);
+                restaurant.SetUpStatus = SetUpStatus.Completed.ToString();
+
                 _db.Restaurants.Add(restaurant);
                 _db.SaveChanges();
                 return RedirectToAction("Index");

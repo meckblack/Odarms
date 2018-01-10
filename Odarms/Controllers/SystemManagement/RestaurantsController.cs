@@ -258,6 +258,7 @@ namespace Odarms.Controllers.SystemManagement
                     }
 
                     TempData["Success"] = restaurant.Name + " have successfully joined the odarms community";
+                    TempData["notificationType"] = NotificationType.Success.ToString();
                     return Json(new { success = true });
                 }
             }

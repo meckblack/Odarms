@@ -74,5 +74,51 @@ namespace Odarms.Data.Factory.EmployeeManagement
             return employeeBankData.ToList();
         }
 
+        /// <summary>
+        ///     This gets all employees by their status
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Employee> GetAllEmployeesByStatus(string status, long? id)
+        {
+            //var allEmployees = _employee.Employees.ToList();
+            var allEmployeesWorkData = _db.EmployeeWorkDatas.ToList();
+            List<Employee> employees = new List<Employee>();
+            foreach (var item in allEmployeesWorkData)
+            {
+                if (item.EmploymentStatus == status)    
+                {
+                    var employee = _db.Employees.Find(item.EmployeeId);
+                    if (employee.RestaurantId == id)
+                    {
+                        employees.Add(employee);
+                    }
+
+                }
+            }
+
+            return employees;
+        }
+        /// <summary>
+        ///     This gets all employees by their status
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Employee> GetAllInactiveEmployees(string status)
+        {
+            var allEmployees = _db.Employees.ToList();
+            var allEmployeesWorkData = _db.EmployeeWorkDatas.ToList();
+            List<Employee> employees = new List<Employee>();
+            foreach (var item in allEmployeesWorkData)
+            {
+                if (item.EmploymentStatus != status)
+                {
+                    var employee = _db.Employees.Find(item.EmployeeId);
+                    employees.Add(employee);
+
+                }
+            }
+
+            return employees;
+        }
+
     }
 }

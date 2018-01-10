@@ -43,6 +43,7 @@ namespace Odarms.Data.DataContext.DataContext
         public DbSet<EmployeeWorkData> EmployeeWorkDatas { get; set; }
         public DbSet<EmployeeMedicalData> EmployeeMedicalDatas { get; set; }
         public DbSet<EmployeePersonalData> EmployeePersonalDatas { get; set; }
+        public DbSet<EmployeeBankData> EmployeeBankDatas { get; set; }
         public DbSet<EmploymentPosition> EmploymentPositions { get; set; }
         public DbSet<Lga> Lgas { get; set; }
         public DbSet<State> States { get; set; }

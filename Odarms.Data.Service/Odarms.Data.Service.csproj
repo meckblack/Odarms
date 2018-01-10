@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Encryption\Md5Encryption.cs" />
     <Compile Include="Enums\BloodGroup.cs" />
+    <Compile Include="Enums\EmployementStatus.cs" />
     <Compile Include="Enums\Genotype.cs" />
     <Compile Include="Enums\NotificationType.cs" />
     <Compile Include="Enums\PackageType.cs" />

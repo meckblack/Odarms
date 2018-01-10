@@ -40,5 +40,19 @@
     </div>
 }
 
+@section scripts {
+    <script src="~/select2/js/select2.min.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // Init select2 for dropdown select
+                $('.select-dropdown').select2();
+
+            });
+
+
+    </script>
+}
 
 

@@ -19,7 +19,7 @@ namespace Odarms.Controllers.Landing
         {
             Session["restaurant"] = null;
             ViewBag.Restaurants = new SelectList(_db.Restaurants.Where(r => r.SubscriptonEndDate > DateTime.Now 
-                                                   && r.SetUpStatus == SetUpStatus.Completed.ToString()), "RestaurantId", "Name");
+                                                   /*&& r.SetUpStatus == SetUpStatus.Completed.ToString()*/), "RestaurantId", "Name");
             return View();
         }
 

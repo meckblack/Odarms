@@ -1,5 +1,6 @@
 ﻿using Odarms.Data.DataContext.DataContext;
 using Odarms.Data.Factory.EmployeeManagement;
+using Odarms.Data.Objects.Entities.Employee;
 using Odarms.Data.Objects.Entities.SystemManagement;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Odarms.Controllers.EmployeeManagement
     public class EmployeeManagementController : Controller
     {
         private readonly DataContext _db = new DataContext();
+        private Employee _employee = new Employee();
 
         #region Fetch Data
 
@@ -68,17 +70,63 @@ namespace Odarms.Controllers.EmployeeManagement
         // GET: EmployeeManagement/ListOfEmployees
         public ActionResult ListOfEmployees()
         {
-            var institution = Session["institution"] as Restaurant;
+            var restaurant = Session["restaurant"] as Restaurant;
             return
-                View(
-                    _db.Employees.ToList()
-                        .Where(n => institution != null && n.RestaurantId == institution.RestaurantId));
+                View(_db.Employees.ToList().Where(n => restaurant != null && n.RestaurantId == restaurant.RestaurantId));
         }
 
-
+        // POST: EmployeeManagement/EmployeesPositionChange
+        public ActionResult EmployeesPositionChange()
+        {
+            var restaurant = Session["restaurant"] as Restaurant;
+            return
+                View(_db.Employees.ToList().Where(n => restaurant != null && n.RestaurantId == restaurant.RestaurantId));
+        }
 
         #endregion
 
+        #region Employee Process
+
+        //GET: EmployeeManagement/PersonalData
+        public ActionResult PersonalData(bool? returnUrl, bool? backUrl)
+        {
+            var restaurant = Session["restaurant"] as Restaurant;
+            _employee = Session["Employee"] as Employee;
+
+            ViewBag.State = new SelectList(_db.States, "StateId", "Name");
+            if (returnUrl != null && returnUrl.Value)
+            {
+                ViewBag.returnUrl = true;
+                _employee = Session["Employee"] as Employee;
+                if(_employee != null)
+                {
+                    return View(_employee.EmployeePersonalDatas.SingleOrDefault());
+                }
+            }
+            if(backUrl != null && backUrl.Value)
+            {
+                if (_employee != null)
+                {
+                    return View(_employee.EmployeePersonalDatas.SingleOrDefault());
+                }
+            }
+
+            var dataBase = new DataContext();
+            var statistics = new SystemStatistic();
+
+            if (restaurant != null)
+            {
+                statistics.RestaurantId = restaurant.RestaurantId;
+            }
+            statistics.DateOccured = DateTime.Now;
+
+            dataBase.SystemStatistics.Add(statistics);
+            dataBase.SaveChanges();
+            return View(_employee?.EmployeePersonalDatas.SingleOrDefault());
+
+        }
+
+        #endregion
 
 
         // GET: EmployeeManagement

@@ -2,6 +2,7 @@
 using Odarms.Data.Factory.EmployeeManagement;
 using Odarms.Data.Objects.Entities.Employee;
 using Odarms.Data.Objects.Entities.SystemManagement;
+using Odarms.Data.Service.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -117,8 +118,10 @@ namespace Odarms.Controllers.EmployeeManagement
             if (restaurant != null)
             {
                 statistics.RestaurantId = restaurant.RestaurantId;
+                statistics.Action = StatisticsEnum.Registration.ToString();
+                statistics.DateOccured = DateTime.Now;
             }
-            statistics.DateOccured = DateTime.Now;
+            
 
             dataBase.SystemStatistics.Add(statistics);
             dataBase.SaveChanges();

@@ -76,25 +76,25 @@ namespace Odarms.Controllers.AccessManagement
                 package.Amount = long.Parse(collection["Amount"]);
                 package.Description = collection["Description"];
                 package.Name = collection["Name"];
-                package.Type = typeof(PackageType).GetEnumName(int.Parse(collection["Type"]));
+                //package.Type = typeof(PackageType).GetEnumName(int.Parse(collection["Type"]));
 
                 if (allPackages.Count >= 3)
                 {
-                    TempData["message"] = "You cannot added a package!";
+                    TempData["package"] = "You cannot added a package!";
                     TempData["notificationType"] = NotificationType.Error.ToString();
                     return RedirectToAction("Index");
                 }
 
                 if (allPackages.Any(p => p.Type == package.Type))
                 {
-                    TempData["message"] = "You cannot add this package because this type exist!";
+                    TempData["package"] = "You cannot add this package because this type exist!";
                     TempData["notificationType"] = NotificationType.Error.ToString();
                     return RedirectToAction("Index");
                 }
 
                 _db.Packages.Add(package);
                 _db.SaveChanges();
-                TempData["message"] = "You have successfully added a new package!";
+                TempData["package"] = "You have successfully added a new package!";
                 TempData["notificationType"] = NotificationType.Success.ToString();
                 return Json(new { success = true });
             }
@@ -176,7 +176,7 @@ namespace Odarms.Controllers.AccessManagement
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            var loggedinuser = Session[""] as AppUser;
+            var loggedinuser = Session["odarmsloggedinuser"] as AppUser;
             if (loggedinuser != null)
             {
                 Package package = _db.Packages.Find(id);

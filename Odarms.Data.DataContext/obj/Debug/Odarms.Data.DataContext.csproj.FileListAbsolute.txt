@@ -28,3 +28,4 @@ C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataConte
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate13.resources
 C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate14.resources
 C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.csproj.CoreCompileInputs.cache
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.DataContext\obj\Debug\Odarms.Data.DataContext.Migrations.Migrate15.resources

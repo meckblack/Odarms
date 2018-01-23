@@ -9,3 +9,4 @@ c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\o
 c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.pdb
 c:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.csprojResolveAssemblyReference.cache
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Objects\bin\Debug\Microsoft.Build.Framework.dll
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.Objects\obj\Debug\Odarms.Data.Objects.csproj.CoreCompileInputs.cache

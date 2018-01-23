@@ -1,9 +1,27 @@
-﻿@model IEnumerable<Odarms.Data.Objects.Entities.AccessManagement.Package>
+﻿@using Odarms.Data.Service.Enums
+@model IEnumerable<Odarms.Data.Objects.Entities.AccessManagement.Package>
+
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@if (TempData["package"] != null)
+{
+    if (TempData["notificationtype"].Equals(NotificationType.Success.ToString()))
+    {
+        <div class="alert alert-success alert-dismissable">@TempData["package"]</div>
+    }
+    else if (TempData["notificationtype"].Equals(NotificationType.Error.ToString()))
+    {
+        <div class="alert alert-danger alert-dismissable">@TempData["package"]</div>
+    }
+    else if (TempData["notificationtype"].Equals(NotificationType.Info.ToString()))
+    {
+        <div class="alert alert-info alert-dismissable">@TempData["package"]</div>
+    }
+}
 
 <div class="">
     <div class="page-title">
@@ -15,7 +33,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
-                
+
                 <div class="x_content">
                     <a href="@Url.Action("Create", "Packages")" class="btn btn-primary pull-right" data-modal="">
                         <i style="color: red;" class="fa fa-plus"></i>
@@ -96,4 +114,3 @@
 
 
 
-    

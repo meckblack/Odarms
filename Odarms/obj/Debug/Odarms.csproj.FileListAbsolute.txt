@@ -108,3 +108,4 @@ C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms\bin\Microsoft.
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms\bin\Odarms.Data.Factory.dll
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms\bin\Odarms.Data.Factory.pdb
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms\bin\Odarms.Data.Factory.dll.config
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms\obj\Debug\Odarms.csproj.CoreCompileInputs.cache

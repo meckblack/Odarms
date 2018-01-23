@@ -15,6 +15,7 @@ namespace Odarms.Data.Objects.Entities.AccessManagement
         public long PackageId { get; set; }
         [Required]
         public string Name { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         [Required]
         public double Amount { get; set; }

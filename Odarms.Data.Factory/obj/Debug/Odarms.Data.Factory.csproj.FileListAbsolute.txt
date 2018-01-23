@@ -17,3 +17,4 @@ C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Factory\o
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Factory\bin\Debug\Odarms.Data.Factory.dll.config
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Factory\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Factory\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.Factory\obj\Debug\Odarms.Data.Factory.csproj.CoreCompileInputs.cache

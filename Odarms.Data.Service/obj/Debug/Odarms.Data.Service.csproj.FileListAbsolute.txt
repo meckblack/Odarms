@@ -7,3 +7,4 @@ C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\o
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.dll
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.pdb
 C:\Users\Meck\documents\visual studio 2017\Projects\Odarms\Odarms.Data.Service\bin\Debug\Microsoft.Build.Framework.dll
+C:\Users\Meck\Documents\Visual Studio 2017\Projects\Odarms\Odarms.Data.Service\obj\Debug\Odarms.Data.Service.csproj.CoreCompileInputs.cache

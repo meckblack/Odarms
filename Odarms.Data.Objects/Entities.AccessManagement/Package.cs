@@ -13,14 +13,18 @@ namespace Odarms.Data.Objects.Entities.AccessManagement
         #region Model Data
 
         public long PackageId { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Name field is required")]
         public string Name { get; set; }
-        [Required]
+
+        [Required(ErrorMessage ="Description field is required")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Amount field is required")]
         public double Amount { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Type field is required")]
         public string Type { get; set; }
 
         #endregion

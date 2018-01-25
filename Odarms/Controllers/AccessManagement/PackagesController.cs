@@ -78,27 +78,22 @@ namespace Odarms.Controllers.AccessManagement
                 package.Name = collection["Name"];
                 //package.Type = typeof(PackageType).GetEnumName(int.Parse(collection["Type"]));
 
-                if (allPackages.Count >= 3)
-                {
-                    TempData["package"] = "You cannot added a package!";
-                    TempData["notificationType"] = NotificationType.Error.ToString();
-                    return RedirectToAction("Index");
-                }
-
+                
                 if (allPackages.Any(p => p.Type == package.Type))
-                {
-                    TempData["package"] = "You cannot add this package because this type exist!";
-                    TempData["notificationType"] = NotificationType.Error.ToString();
-                    return RedirectToAction("Index");
+                    {
+                        TempData["package"] = "You cannot add this package because this type exist!";
+                        TempData["notificationType"] = NotificationType.Error.ToString();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        _db.Packages.Add(package);
+                        _db.SaveChanges();
+                        TempData["package"] = "You have successfully added a new package!";
+                        TempData["notificationType"] = NotificationType.Success.ToString();
+                        return Json(new { success = true });
+                    }
                 }
-
-                _db.Packages.Add(package);
-                _db.SaveChanges();
-                TempData["package"] = "You have successfully added a new package!";
-                TempData["notificationType"] = NotificationType.Success.ToString();
-                return Json(new { success = true });
-            }
-
             return View(package);
         }
 

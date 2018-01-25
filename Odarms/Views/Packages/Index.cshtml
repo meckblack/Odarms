@@ -1,11 +1,5 @@
-﻿@using Odarms.Data.Service.Enums
-@model IEnumerable<Odarms.Data.Objects.Entities.AccessManagement.Package>
-
-
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
+﻿@model IEnumerable<Odarms.Data.Objects.Entities.AccessManagement.Package>
+@using Odarms.Data.Service.Enums
 
 @if (TempData["package"] != null)
 {
@@ -22,6 +16,11 @@
         <div class="alert alert-info alert-dismissable">@TempData["package"]</div>
     }
 }
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <div class="">
     <div class="page-title">

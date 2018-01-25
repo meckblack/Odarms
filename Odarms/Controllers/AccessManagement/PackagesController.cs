@@ -79,7 +79,7 @@ namespace Odarms.Controllers.AccessManagement
 
                 if (allPackages.Count >= 3)
                 {
-                    TempData["package"] = "You have you used up all your Package Types!";
+                    TempData["package"] = "You cannot have two packages with the same package type!";
                     TempData["notificationType"] = NotificationType.Error.ToString();
                     return RedirectToAction("Index");
                 }

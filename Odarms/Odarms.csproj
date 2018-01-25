@@ -4599,7 +4599,6 @@
     <Content Include="Views\Shared\Layout Partial\testhome.cshtml" />
     <Content Include="Views\Packages\Create.cshtml" />
     <Content Include="Views\Packages\Delete.cshtml" />
-    <Content Include="Views\Packages\Details.cshtml" />
     <Content Include="Views\Packages\Edit.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Shared\_LandingLayout.cshtml" />

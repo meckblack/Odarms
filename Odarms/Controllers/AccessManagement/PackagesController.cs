@@ -57,8 +57,7 @@ namespace Odarms.Controllers.AccessManagement
         // GET: Packages/Create
         public ActionResult Create()
         {
-            var package = new Package();
-            return PartialView("Create", package);
+            return View();
         }
 
         // POST: Packages/Create
@@ -78,22 +77,27 @@ namespace Odarms.Controllers.AccessManagement
                 package.Name = collection["Name"];
                 //package.Type = typeof(PackageType).GetEnumName(int.Parse(collection["Type"]));
 
-                
-                if (allPackages.Any(p => p.Type == package.Type))
-                    {
-                        TempData["package"] = "You cannot add this package because this type exist!";
-                        TempData["notificationType"] = NotificationType.Error.ToString();
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        _db.Packages.Add(package);
-                        _db.SaveChanges();
-                        TempData["package"] = "You have successfully added a new package!";
-                        TempData["notificationType"] = NotificationType.Success.ToString();
-                        return Json(new { success = true });
-                    }
+                if (allPackages.Count >= 3)
+                {
+                    TempData["package"] = "You have you used up all your Package Types!";
+                    TempData["notificationType"] = NotificationType.Error.ToString();
+                    return RedirectToAction("Index");
                 }
+
+                if (allPackages.Any(p => p.Type == package.Type))
+                {
+                    TempData["package"] = "You cannot add this package because this type exist!";
+                    TempData["notificationType"] = NotificationType.Error.ToString();
+                    return RedirectToAction("Index");
+                }
+
+                _db.Packages.Add(package);
+                _db.SaveChanges();
+                TempData["package"] = "You have successfully added a new package!";
+                TempData["notificationType"] = NotificationType.Success.ToString();
+                return Json(new { success = true });
+            }
+
             return View(package);
         }
 

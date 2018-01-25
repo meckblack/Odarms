@@ -1,6 +1,10 @@
 ﻿@model IEnumerable<Odarms.Data.Objects.Entities.AccessManagement.Package>
 @using Odarms.Data.Service.Enums
 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 @if (TempData["package"] != null)
 {
     if (TempData["notificationtype"].Equals(NotificationType.Success.ToString()))
@@ -17,9 +21,7 @@
     }
 }
 
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
 
 
 <div class="">
@@ -34,7 +36,7 @@
             <div class="x_panel">
 
                 <div class="x_content">
-                    <a href="@Url.Action("Create", "Packages")" class="btn btn-primary pull-right" data-modal="">
+                    <a href="@Url.Action("Create", "Packages")" class="btn btn-primary pull-right">
                         <i style="color: red;" class="fa fa-plus"></i>
                         ADD
                     </a>
@@ -85,17 +87,6 @@
 </div>
 
 <script src="~/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="~/Scripts/Odarms.js"></script>
-
-<!-- modal placeholder-->
-<div id='myModal' class='modal fade in' data-backdrop="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div id='myModalContent'>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script>

@@ -167,7 +167,7 @@ namespace Odarms.Controllers.AccessManagement
             {
                 return HttpNotFound();
             }
-            return View(package);
+            return PartialView("Delete", package);
         }
 
         // POST: Packages/Delete/5
@@ -186,9 +186,9 @@ namespace Odarms.Controllers.AccessManagement
             {
                 TempData["message"] = "Session Expired, Login Again";
                 TempData["notificationtype"] = NotificationType.Info.ToString();
-                return RedirectToAction("Login", "Account");
+                return View("Login", "Account");
             }
-            return RedirectToAction("Index");
+            return View();
         }
 
         #endregion

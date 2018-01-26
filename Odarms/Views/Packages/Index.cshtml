@@ -74,7 +74,7 @@
                                 </td>
                                 <td>
                                     <a href="@Url.Action("Edit", "Packages", new { id = item.PackageId })" data-modal=""><i style="color: brown;" class="fa fa-2x fa-edit"></i></a>
-                                    <a href="@Url.Action("Delete", "Delete", new { id = item.PackageId })" data-modal=""><i style="color: red;" class="fa fa-2x fa-trash"></i></a>
+                                    <a href="@Url.Action("Delete", "Packages", new { id = item.PackageId })" data-modal=""><i style="color: red;" class="fa fa-2x fa-trash"></i></a>
                                 </td>
                             </tr>
                         }
@@ -87,7 +87,17 @@
 </div>
 
 <script src="~/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="~/Scripts/Odarms.js"></script>
 
+<!-- modal placeholder-->
+<div id='myModal' class='modal fade in' data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {

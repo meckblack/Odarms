@@ -14,7 +14,7 @@ using System.Net.Mail;
 
 namespace Odarms.Controllers.SystemManagement
 {
-    [Authorize]
+    
     public class RestaurantsController : Controller
     {
         private readonly DataContext _db = new DataContext();
